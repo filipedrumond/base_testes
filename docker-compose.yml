@@ -1,0 +1,14 @@
+version: '3'
+services:
+    base_testes:
+      build: 
+          context: .
+          dockerfile: Dockerfile
+      container_name: base_testes
+      ports:
+          - "4040:80"
+      volumes:
+          - .:/var/www/
+          #- ./server/apache2/sites-available/000-default.conf:/etc/apache2/sites-available/000-default.conf
+      environment:
+          - APPLICATION_ENV=development
